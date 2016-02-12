@@ -5,12 +5,13 @@
     "authors": [
         {
             "name": "Emmanuel Leveque",
-            "email": "eleveque@hi-media.com"
+            "email": "eleveque@hipay.com"
         }
     ],
     "minimum-stability" : "dev",
     "require": {
-        "php" : ">=5.3.0"
+        "php" : ">=5.3.0",
+        "sensiolabs/security-checker": "^3.0"
     },
     "target-dir": "Hipay/PHPCI/Plugin",
     "autoload": {
