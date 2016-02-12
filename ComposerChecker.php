@@ -2,6 +2,9 @@
 namespace Hipay\PHPCI\Plugin;
 
 use PHPCI\Plugin;
+use PHPCI\Builder;
+use PHPCI\Model\Build;
+
 use SensioLabs\Security\SecurityChecker;
 
 class ComposerChecker implements Plugin
@@ -21,7 +24,7 @@ class ComposerChecker implements Plugin
     {
         $path = $builder->buildPath . '/composer.lock';
 
-        if (file_exists($path) && $stage == 'setup') {
+        if (file_exists($path)) {
             return true;
         }
 
@@ -35,6 +38,7 @@ class ComposerChecker implements Plugin
         $checker = new SecurityChecker();
         $alerts = $checker->check($this->phpci->buildPath . '/composer.lock');
 
+        $this->build->storeMeta('composer-security-check-errors', $alerts);
         if (!$alerts) {
             return true;
         }
