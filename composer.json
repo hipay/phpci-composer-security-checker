@@ -1,0 +1,21 @@
+{
+    "name": "hipay/phpci-composer-security-checker",
+    "Description": "Integration of ",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Emmanuel Leveque",
+            "email": "eleveque@hi-media.com"
+        }
+    ],
+    "minimum-stability" : "dev",
+    "require": {
+        "php" : ">=5.3.0"
+    },
+    "target-dir": "Hipay/PHPCI/Plugin",
+    "autoload": {
+        "psr-0": {
+            "Hipay\\PHPCI\\Plugin" : ""
+        }
+    }
+}

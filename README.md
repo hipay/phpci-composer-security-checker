@@ -1,0 +1,1 @@
+# phpci-composer-security-checker
